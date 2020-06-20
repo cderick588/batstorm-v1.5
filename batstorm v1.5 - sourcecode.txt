@@ -25,6 +25,8 @@ goto UACPrompt
 :gotAdmin
 del /f /q %temp%\getadmin.vbs
 echo shit >>C:\igotadmin.txt
+pushd "%CD%"
+CD /D "%~dp0"
 if "%1" == "h" goto begin
 mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&&exit
 
